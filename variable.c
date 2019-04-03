@@ -2312,12 +2312,8 @@ static VALUE
 rb_const_search(VALUE klass, ID id, int exclude, int recurse, int visibility)
 {
 	rb_const_entry_t *ce;
-	VALUE value = rb_const_search_const_entry(klass, id, exclude, recurse, visibility, &ce);
-	rb_warn("test");
-	rb_warn("%"PRIsVALUE"", value);
-	rb_warn("%"PRIsVALUE"", ce->value);
-	value = ce->value;
-	return value;
+	rb_const_search_const_entry(klass, id, exclude, recurse, visibility, &ce);
+	return ce->value;
 }
 
 VALUE
